@@ -1,6 +1,8 @@
 import { ParsedLineType } from "./parser";
 import { isNumber } from "./helpers";
 import {
+  ScalarOperationType,
+  ScalarOperationTypeSingle,
   mathOperators,
   mathPriorities,
   mathOperatorsPriorities,
@@ -19,9 +21,10 @@ export const zeroPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
       if (!mathOperators[nextItem]) {
         throw new TypeError("Unexpected stack!");
       }
+      const operator = mathOperators[nextItem] as ScalarOperationTypeSingle
       result = [
         ...result.slice(0, -1),
-        mathOperators[nextItem](Number(item), 0),
+        operator(Number(item)),
       ];
     } else {
       result.push(nextItem);

@@ -1,4 +1,5 @@
 export type ScalarOperationType = (first: number, second: number) => number;
+export type ScalarOperationTypeSingle = (operand: number) => number;
 
 export const mul: ScalarOperationType = (
   first: number,
@@ -20,7 +21,7 @@ export const minus: ScalarOperationType = (
   second: number
 ): number => first - second;
 
-export const square: ScalarOperationType = (first: number): number =>
+export const square: ScalarOperationTypeSingle = (first: number): number =>
   first * first;
 
 export const power: ScalarOperationType = (
@@ -28,10 +29,10 @@ export const power: ScalarOperationType = (
   second: number
 ): number => first ** second;
 
-export const factorial = (base: number): number =>
+export const factorial: ScalarOperationTypeSingle = (base: number): number =>
   base != 1 ? base * factorial(base - 1) : 1;
 
-export const mathOperators: { [key: string]: ScalarOperationType } = {
+export const mathOperators: { [key: string]: ScalarOperationType | ScalarOperationTypeSingle } = {
   "*": mul,
   "/": div,
   "+": add,

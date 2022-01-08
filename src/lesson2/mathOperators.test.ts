@@ -38,7 +38,7 @@ describe("mathOperators test cases", () => {
   });
 
   it("5 square to equal 25", () => {
-    expect(square(5, 0)).toBe(25);
+    expect(square(5)).toBe(25);
   });
 
   it("7 power 2 to equal 49", () => {
