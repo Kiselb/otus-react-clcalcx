@@ -2,7 +2,7 @@ import { isNumber } from "./helpers";
 import {
   mathOperators,
   mathPriorities,
-  mathOperatorsPriorities
+  mathOperatorsPriorities,
 } from "./mathOperators";
 
 const [ZERO] = mathPriorities;

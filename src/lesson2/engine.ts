@@ -28,8 +28,8 @@ export const zeroPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
     }
     return result;
   }, []);
-  
-  export const firstPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
+
+export const firstPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
   stack.reduce<ParsedLineType>((result, nextItem) => {
     const prevItem = result[result.length - 2];
     const item = result[result.length - 1];

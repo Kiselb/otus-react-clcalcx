@@ -1,4 +1,8 @@
-import { firstPrioritiesCalc, secondPrioritiesCalc, zeroPrioritiesCalc } from "./engine";
+import {
+  firstPrioritiesCalc,
+  secondPrioritiesCalc,
+  zeroPrioritiesCalc,
+} from "./engine";
 
 describe("zeroPrioritiesCalc simple cases", () => {
   it("[2, **]", () => {
@@ -30,13 +34,11 @@ describe("firstPrioritiesCalc simple cases", () => {
 
 describe("mixed zeroPrioritiesCalc, firstPrioritiesCalc and second priorities cases", () => {
   it("[5 ! + 32, /, 32, +, 10, *, 10]", () => {
-    expect(firstPrioritiesCalc(zeroPrioritiesCalc([5, "!", "+", 32, "/", 32, "+", 10, "*", 10]))).toEqual([
-      120,
-      "+",
-      1,
-      "+",
-      100,
-    ]);
+    expect(
+      firstPrioritiesCalc(
+        zeroPrioritiesCalc([5, "!", "+", 32, "/", 32, "+", 10, "*", 10])
+      )
+    ).toEqual([120, "+", 1, "+", 100]);
   });
 });
 

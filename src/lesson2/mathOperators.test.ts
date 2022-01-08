@@ -1,4 +1,12 @@
-import { mul, div, add, minus, factorial, square, power, } from "./mathOperators";
+import {
+  mul,
+  div,
+  add,
+  minus,
+  factorial,
+  square,
+  power,
+} from "./mathOperators";
 
 describe("mathOperators test cases", () => {
   it("mul 1 * 2 to equal 2", () => {

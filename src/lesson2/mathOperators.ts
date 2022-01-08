@@ -31,7 +31,7 @@ export const power: ScalarOperationType = (
 export const factorial = (base: number): number =>
   base != 1 ? base * factorial(base - 1) : 1;
 
-  export const mathOperators: { [key: string]: ScalarOperationType } = {
+export const mathOperators: { [key: string]: ScalarOperationType } = {
   "*": mul,
   "/": div,
   "+": add,
