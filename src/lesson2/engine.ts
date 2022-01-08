@@ -21,11 +21,8 @@ export const zeroPrioritiesCalc = (stack: ParsedLineType): ParsedLineType =>
       if (!mathOperators[nextItem]) {
         throw new TypeError("Unexpected stack!");
       }
-      const operator = mathOperators[nextItem] as ScalarOperationTypeSingle
-      result = [
-        ...result.slice(0, -1),
-        operator(Number(item)),
-      ];
+      const operator = mathOperators[nextItem] as ScalarOperationTypeSingle;
+      result = [...result.slice(0, -1), operator(Number(item))];
     } else {
       result.push(nextItem);
     }
